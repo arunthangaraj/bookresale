@@ -1,0 +1,21 @@
+<ion-view class="bg-color" view-title="Checkout OTP">
+    <ion-content>
+        <div class="page-center text-highlight">
+
+            <form name="otpForm" ng-submit="verifyOTP()">
+                OTP
+                <label class="item item-input input-bottom" ng-class="{'has-error': otpForm.otp.$invalid && otpForm.otp.$dirty}">
+                    <input type="tel" placeholder="OTP" name="otp" ng-model="otp.code" required="true">
+                </label>
+
+                <div class="padding">
+                    <button class="button button-block app-theme" type="submit" disabled="disabled" ng-disabled="otpForm.$invalid || otp.loading">
+                        <span ng-show="!otp.loading">Confirm</span>
+                        <span ng-show="otp.loading">Verifying OTP</span>
+                        <ion-spinner icon="bubbles" class="spinner-light align-right" ng-show="otp.loading"></ion-spinner> 
+                    </button>
+                </div>
+            </form>
+        </div>
+    </ion-content>
+</ion-view>

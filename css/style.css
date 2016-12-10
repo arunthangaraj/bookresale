@@ -1,0 +1,208 @@
+input::-webkit-input-placeholder
+{
+    color:black;
+}
+input::-moz-placeholder
+{
+    color:black;
+}
+.spinner-center
+{
+    margin-top: 50%;
+    margin-left: 50%;
+    
+}
+.bg-color
+{
+    
+    background:  #b2b0bc repeat;
+}
+
+.toll
+{
+    margin-top: 20px;
+    
+}
+#myProgress {
+  width: 100%;
+  height: 10px;
+  position: relative;
+  background-color: #ddd;
+  margin-top: 10px;
+}
+
+#myBar {
+  background-color: #4CAF50;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+}
+.three
+{
+    float:left;
+    color:green;
+    font-size: 20px;
+}
+.link
+{
+    color:  #10174c;
+}
+.app-theme
+{
+    //border-color:   #ed1c24;
+    background-color:  #36304b;
+  //  background-image: linear-gradient(0deg,  #ed1c24, #ed1c24 50%, transparent 50%);
+    color: #fff;
+}
+.app-theme .title
+{
+    color: #fff;
+}
+.app-theme .button
+{
+    color: #fff;
+}
+.error_container
+{
+    margin: 0px 5px;
+    font-size: 10px;
+    color: red;
+}
+.padding
+{
+    margin: 15px;
+}
+.set-margin
+{
+    margin-left:10%;
+}
+
+.input-bottom
+{
+    border-style: none;
+    border-bottom-style: solid;
+    margin: 4px 0px;
+    background: transparent;
+}
+.has-error
+{
+    border-color: red;
+}
+.last-item
+{
+    margin-bottom: 25px;
+}
+.label-display
+{
+    margin: 10px 0px;
+    padding-left: 2px;
+    font-size: 14px;
+}
+.center
+{
+    text-align: center;
+    alignment-adjust: central;
+}
+.larger {
+    font-size: larger;
+}
+.logo
+{
+    margin-left: 30%;
+    margin-right: 30%;
+    height: 100px;
+}
+.align-right
+{
+    float: right;
+}
+.align-left
+{
+    float: left;
+    width: 50%;
+}
+.attach-left
+{
+    float: left; 
+}
+.attach-right
+{
+    float: right;
+}
+.menu-icon
+{
+    margin-left: 5px;
+    margin-right: 15px;
+}
+.attach-left
+{
+    float: left; 
+}
+.attach-right
+{
+    float: right;
+}
+.card-component
+{
+    padding: 10px 20px;
+}
+.text-centre
+{
+    text-align: center;
+}
+.text-highlight
+{
+    font-weight: bold;
+}
+.Processing
+{
+    color: orange;
+}
+.Declined
+{
+    color: red;
+}
+.Approved
+{
+    color: green;
+}
+.address
+{
+    padding: 7px;
+    width: 100%;
+    float: left;
+    margin-top: 4px;
+}
+.border
+{
+    border: solid 1px gainsboro;
+    padding: 0px 4px;
+}
+.icon-dark
+{
+    color: black;
+}
+.profile-form:enabled
+{
+    border-bottom-style: solid;
+    border-color: green;
+    border-width: 1px;
+    padding-left: 10px;
+}
+.card-padding
+{
+    padding: 10px 10px 10px 10px;
+}
+.profile-form:disabled
+{
+    background: transparent;
+}
+.profile-form-error:enabled
+{
+    border-style: none;
+    border-right-style: none;
+    border-bottom-style: solid;
+    border-color: red;
+    border-width: 1px;
+    padding-left: 10px;
+}

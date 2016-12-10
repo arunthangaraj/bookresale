@@ -1,0 +1,54 @@
+
+<ion-view title="BookResale">
+<ion-content class="form-page">
+    <form name="signInForm" method="post" ng-submit="signIn()" class="form-container">
+          
+         
+          
+       <div class="list padding ">  
+
+        <center>
+          <label class="icon-positive page-title"> Sign In</label>
+          </center>     
+           
+                <label class="item item-input input-bottom" ng-class="{'has-error': signInForm.email.$invalid && signInForm.email.$dirty}">
+                    <input type="email" placeholder="Email" name="email" ng-model="data.username" ng-pattern="/^[A-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/" required="true"><span></span>
+                </label>
+                <div class="error_container" ng-show="signInForm.email.$dirty && signInForm.email.$error.required" >
+                       Your email address is required
+                </div>
+               <div class="error_container" ng-show="signInForm.email.$dirty && signInForm.email.$error.pattern" >
+                     Your email address is invalid
+                </div>
+                             
+                <label class="item item-input input-bottom" ng-class="{'has-error': signInForm.password.$invalid && signInForm.password.$dirty}">
+                    <input type="password" placeholder="Password" name="password" ng-model="data.password" required="true" ng-maxlength="20">
+                </label>
+               <div class="error_container" ng-show="signInForm.password.$error.required && signInForm.password.$dirty">
+                   Password is required
+               </div>
+        
+   </div>
+      
+    <div class="padding">
+        <button class="button button-block app-theme" type="submit" disabled="disabled" ng-disabled="signInForm.$invalid || data.loading">
+            <span ng-show="!data.loading">Sign in</span>
+            <span ng-show="data.loading">Signing in</span>
+            <ion-spinner icon="bubbles" class="spinner-light align-right" ng-show="data.loading"></ion-spinner> 
+        </button>
+        <p class="label-display center">
+            <a ui-sref="resetPassword" class="link">Forgot your password? </a>
+        </p>
+        <p class="label-display center">
+            Don't have an account yet? <a ui-sref="signUp" class="link">Sign Up </a>
+        </p>
+    </div>
+          </form>
+
+
+        <center>
+          <label class="">&#169; BookResale. All Rights Reserved.</label>
+        </center>
+
+</ion-content>
+</ion-view>       

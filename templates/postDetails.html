@@ -1,0 +1,31 @@
+
+<ion-nav-view view-title="Details" class="bg-color">
+ <ion-content>
+   
+ <div>
+  <div class="card card-padding">
+      
+            <div class="align-left">
+		   <p>{{data.bookname}}</p>
+		   <p   class="text-highlight"  > {{data.bookauthor}}</p>
+                   <p   class="text-highlight"  > {{data.bookprice}}</p>
+		   </div>
+		   <div class="align-right">
+			<p >{{data.username}}</p>
+                        <p>{{data.userlocation}}</p>
+                        <p>{{data.userphone}}</p>
+                        
+		   </div>
+      
+  </div>
+     <div style="margin-top: 25%" class="center">
+     <button class="button button-medium app-theme" ng-click="goEdit()">
+            Edit
+        </button>
+     <button class="button button-medium app-theme" ng-click="goaccount()">
+            Back
+        </button>
+         </div>
+  </ion-content>
+</ion-nav-view>
+

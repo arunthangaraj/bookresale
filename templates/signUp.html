@@ -1,0 +1,79 @@
+<ion-view title="Sign Up" class="bg-color">
+    <ion-content>
+      <form name="sign_up_form" method="post" ng-submit="signUp()">
+       <div class="list padding">
+         
+               <label class="item item-input input-bottom" ng-class="{'has-error': sign_up_form.name.$invalid && sign_up_form.name.$dirty}">
+                    <input type="text" placeholder="Name" name="name" ng-model="signupData.name" required="true">
+                </label>
+                <div class="error_container" ng-show="sign_up_form.name.$invalid && sign_up_form.name.$dirty">
+                    Your name is required
+                </div>
+      
+               
+                <label class="item item-input input-bottom" ng-class="{'has-error': sign_up_form.email.$invalid && sign_up_form.email.$dirty}">
+                    <input type="email" placeholder="Email" name="email" ng-model="signupData.email" ng-pattern="/^[A-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/" required="true"><span></span>
+                </label>
+                <div class="error_container" ng-show="sign_up_form.email.$dirty && sign_up_form.email.$error.required" >
+                       Your email address is required
+                </div>
+               <div class="error_container" ng-show="sign_up_form.email.$dirty && sign_up_form.email.$error.pattern" >
+                     Your email address is invalid
+                </div>
+              
+               
+                <label class="item item-input input-bottom" ng-class="{'has-error': sign_up_form.phone.$invalid && sign_up_form.phone.$dirty}">
+                    <input type="tel" placeholder="Phone" name="phone" ng-pattern="/^\(?(\d{3})\)?[ .-]?(\d{3})[ .-]?(\d{4})$/" ng-model="signupData.phone" maxlength="10" required="true">
+                </label>
+                <div class="error_container" ng-show="sign_up_form.phone.$error.required && sign_up_form.phone.$dirty">
+                    Your phone cannot be empty
+                </div>
+                <div class="error_container" ng-show="! sign_up_form.phone.$error.required && sign_up_form.phone.$error.pattern && sign_up_form.phone.$dirty">
+                    Invalid phone number
+                </div>
+               
+               
+                <label class="item item-input input-bottom" ng-class="{'has-error': sign_up_form.password.$invalid && sign_up_form.password.$dirty}">
+                    <input type="password" placeholder="Password" name="password" ng-model="signupData.password" required="true" ng-minlength="6" ng-maxlength="20">
+                </label>
+               <div class="error_container" ng-show="sign_up_form.password.$error.required && sign_up_form.password.$dirty">
+                   Password is required
+               </div>
+               <div class="error_container" ng-show="sign_up_form.password.$error.minlength && sign_up_form.password.$dirty">
+                   Your password should contain atleast 6 characters
+               </div>
+               <div class="error_container" ng-show="sign_up_form.password.$error.maxlength && sign_up_form.password.$dirty">
+                   Sorry you are exceeding the limit
+               </div>
+        
+               
+               <label class="item item-input input-bottom" ng-class="{'has-error': (sign_up_form.confirmPassword.$invalid || ! isPasswordMatch()) && sign_up_form.confirmPassword.$dirty}">
+                   <input type="password" placeholder="Confirm Password" name="confirmPassword" ng-model="signupData.confirmPassword" required="true">
+               </label>
+               <div class="error_container" ng-show="sign_up_form.confirmPassword.$error.required && sign_up_form.confirmPassword.$dirty" >
+                   Confirm password is required
+               </div>
+               <div class="error_container" ng-show="! isPasswordMatch() && sign_up_form.confirmPassword.$dirty && ! sign_up_form.confirmPassword.$error.required">
+                   Password must match
+               </div>
+           
+   </div>
+      
+    <div class="padding">
+        <p class="label-display center">
+            By clicking on Sign up, you agree to <a href="#" class="link"> terms &AMP; conditions</a> and <a href="#" class="link">privacy policy</a>
+        </p>
+    </div>
+    <div class="padding">
+        <button class="button button-block app-theme" type="submit" disabled="disabled" ng-disabled="sign_up_form.$invalid || !isPasswordMatch() || signupData.loading">
+            <span ng-show="! signupData.loading">Sign Up</span>
+            <span ng-show="signupData.loading">Creating Account</span>
+            <ion-spinner icon="bubbles" class="spinner-light align-right" ng-show="signupData.loading"></ion-spinner> 
+        </button>
+        <p class="label-display center">
+            Already have an account? <a ui-sref="signIn" class="link">Sign in now</a>
+        </p>
+    </div>
+          </form>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,26 @@
+
+<ion-view view-title="Details" class="bg-color">
+ <ion-content>
+    <ion-spinner icon="bubbles" class="spinner-light spinner-center" ng-show="data.loadingFirst" >
+     </ion-spinner>
+ <div >
+     <div class="card card-padding" ng-repeat="store in stores">
+      
+            <div class="align-left">
+		   <p>{{store.book_title}}</p>
+		   <p   class="text-highlight"  > {{store.book_author}}</p>
+                   <p   class="text-highlight"  > {{store.book_price}}</p>
+		   </div>
+		   <div class="align-right">
+			<p >{{store.user_name}}</p>
+                        <p>{{store.user_location}}</p>
+                        <p>{{store.user_phone}}</p>
+                        
+		   </div>
+      
+  </div>
+     
+     <div>  <button class="button button-block app-theme" ng-click="back()" >Back</button></div>
+  
+  </ion-content>
+</ion-view>

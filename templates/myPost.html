@@ -1,0 +1,25 @@
+<ion-view view-title="Your Post" class="bg-color">
+    <ion-content> 
+         <ion-spinner icon="bubbles" class="spinner-light spinner-center" ng-show="data.loadingFirst" >
+     </ion-spinner>
+        <ion-list class="white">
+            <ion-item  class="item-remove-animate item-icon-right" ng-repeat="store in stores" href="#/post/{{store.book_id}}/{{store.book_title}}/{{store.book_author}}/{{store.book_price}}/{{store.id}}/{{store.user_name}}/{{store.user_location}}/{{store.user_phone}}" >
+                
+               <div class="avatar-label">
+                    
+                    <label class="text-highlight align-left" >{{store.book_title}}</label>
+                </div>
+                <label class="text-highlight text-large align-right" >{{store.book_author}}</label>
+                <P class="text-highlight align-left" >Rs.{{store.book_price}}</P>
+                 <i class="icon ion-chevron-right icon-accessory"></i>
+                <ion-option-button class="button-assertive" ng-click="remove(store.id,store.book_id)">
+          Remove
+        </ion-option-button>
+            </ion-item>
+        </ion-list>
+ 
+        <div class="page-center text-highlight" ng-show="merchantSearchData.validSearch && merchantSearchData.stores.length <= 0">
+                No results found
+        </div>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,57 @@
+<ion-view  class="bg-color">
+  <ion-content class="padding">
+     <form name="sign_up_form" method="post" ng-submit="post()">
+       <div class="list padding">
+         
+               <label class="item item-input input-bottom" ng-class="{'has-error': sign_up_form.name.$invalid && sign_up_form.name.$dirty}">
+                   <i class="icon placeholder-icon menu-icon"><img src="./img/title_icon.png" class="logo" style="width:20px;height:20px"></i> 
+                   <input type="text" placeholder="Title" name="name" ng-model="signupData.title" required="true">
+                </label>
+                <div class="error_container" ng-show="sign_up_form.name.$invalid && sign_up_form.name.$dirty">
+                    Title is required
+                </div>    
+                <label class="item item-input input-bottom" ng-class="{'has-error': sign_up_form.name.$invalid && sign_up_form.name.$dirty}">
+                   <i class="icon placeholder-icon menu-icon"><img src="./img/author.png" class="logo" style="width:20px;height:20px"></i> 
+                   <input type="text" placeholder="Author" name="auhtor" ng-model="signupData.author" required="true">
+                </label>
+                <div class="error_container" ng-show="sign_up_form.name.$invalid && sign_up_form.name.$dirty">
+                    Author is required
+                </div>  
+               <label class="item item-input input-bottom" ng-class="{'has-error': sign_up_form.name.$invalid && sign_up_form.name.$dirty}">
+                   <i class="icon placeholder-icon menu-icon"><img src="./img/location.png" class="logo" style="width:20px;height:20px"></i> 
+                   <input type="text" placeholder="Location" name="location" ng-model="signupData.location" required="true">
+                </label>
+                <div class="error_container" ng-show="sign_up_form.name.$invalid && sign_up_form.name.$dirty">
+                    Location is required
+                </div>
+                <label class="item item-input input-bottom" ng-class="{'has-error': sign_up_form.name.$invalid && sign_up_form.name.$dirty}">
+                    <i class="icon placeholder-icon menu-icon"><img src="./img/rupees1.png" class="logo" style="width:20px;height:20px"></i>
+                    <input type="tel" placeholder="Price" name="price" ng-model="signupData.price" required="true">
+                </label>
+                <div class="error_container" ng-show="sign_up_form.name.$invalid && sign_up_form.name.$dirty">
+                    Price is required
+                </div>
+                
+                <label class="item item-input input-bottom" ng-class="{'has-error': sign_up_form.phone.$invalid && sign_up_form.phone.$dirty}">
+                    <i class="icon placeholder-icon menu-icon"><img src="./img/phone.png" class="logo" style="width:20px;height:20px"></i> 
+                    <input type="tel" placeholder="Phone" name="phone" ng-pattern="/^\(?(\d{3})\)?[ .-]?(\d{3})[ .-]?(\d{4})$/" ng-model="signupData.phone" maxlength="10" required="true">
+                </label>
+                <div class="error_container" ng-show="sign_up_form.phone.$error.required && sign_up_form.phone.$dirty">
+                    Your phone cannot be empty
+                </div>
+                <div class="error_container" ng-show="! sign_up_form.phone.$error.required && sign_up_form.phone.$error.pattern && sign_up_form.phone.$dirty">
+                    Invalid phone number
+                </div>
+   </div>    
+    
+    <div class="padding">
+        <button class="button button-block app-theme" type="submit" disabled="disabled" ng-disabled="sign_up_form.$invalid || signupData.loading">
+            <span ng-show="! signupData.loading">Save</span>
+            <span ng-show="signupData.loading">Saving</span>
+            <ion-spinner icon="bubbles" class="spinner-light align-right" ng-show="signupData.loading"></ion-spinner> 
+        </button>
+        
+    </div>
+          </form>
+  </ion-content>
+</ion-view>

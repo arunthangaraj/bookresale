@@ -1,0 +1,44 @@
+
+<ion-view title="Signin" class="bg-color">
+<ion-content>
+    <form name="signInForm" method="post" ng-submit="signin()">
+          
+          <div class="list padding">
+              <img src="./img/groxer.png" class="logo">
+          </div>
+          
+       <div class="list padding ">       
+           
+                <label class="item item-input input-bottom" ng-class="{'has-error': signInForm.email.$invalid && signInForm.email.$dirty}">
+                    <input type="email" placeholder="Email" name="email" ng-model="data.username" ng-pattern="/^[A-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/" required="true"><span></span>
+                </label>
+                <div class="error_container" ng-show="signInForm.email.$dirty && signInForm.email.$error.required" >
+                       Your email address is required
+                </div>
+               <div class="error_container" ng-show="signInForm.email.$dirty && signInForm.email.$error.pattern" >
+                     Your email address is invalid
+                </div>
+                             
+                <label class="item item-input input-bottom" ng-class="{'has-error': signInForm.password.$invalid && signInForm.password.$dirty}">
+                    <input type="password" placeholder="Password" name="password" ng-model="data.password" required="true" ng-maxlength="20">
+                </label>
+               <div class="error_container" ng-show="signInForm.password.$error.required && signInForm.password.$dirty">
+                   Password is required
+               </div>
+        
+               <div class=" last-item"></div>     
+   </div>
+      
+    <div class="padding last-item">
+        <button class="button button-block app-theme" type="submit" disabled="disabled" ng-disabled="signInForm.$invalid || data.loading">
+            <span ng-show="! data.loading">Sign in</span>
+            <span ng-show="data.loading">Signing in</span>
+            <ion-spinner icon="bubbles" class="spinner-light align-right" ng-show="data.loading"></ion-spinner> 
+        </button>
+        <p class="label-display center">
+            <a uri-sref="resetpassword" class="link">Forgot your password? </a>
+        </p>
+    </div>
+          </form>
+</ion-content>
+</ion-view>       
